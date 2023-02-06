@@ -1,20 +1,55 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container">
+    <a href='#/'>Home</a>
+    <a href='#/data'>Data</a>
+    <a href="#/temp">Api Data</a>
+    <component :is="currentView" />
+  </div>
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import HomeViewVue from './components/HomeView.vue';
+import DataView from './components/DataView.vue';
+import NotFound from './components/NotFound.vue';
+import TempData from "./components/TempData.vue"
+
+const routes = {
+  '/' : HomeViewVue,
+  '/data':DataView,
+  '/temp':TempData
+}
+
+console.log(window.location.hash)
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  data(){
+    return {
+      currentPath : window.location.hash
+    }
+  },
+  computed:{
+    currentView(){
+      return routes[this.currentPath.slice(1) || '/'] || NotFound
+    }
+  },
+  mounted(){
+    window.addEventListener('hashchange', () => {
+      console.log(this.currentPath)
+      this.currentPath = window.location.hash
+    })
   }
-}
+  
+} 
 </script>
 
 <style>
+.container{
+  margin: auto;
+  margin-left: 20px;
+  padding: 20px;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -24,3 +59,4 @@ export default {
   margin-top: 60px;
 }
 </style>
+
