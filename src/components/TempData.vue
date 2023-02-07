@@ -15,11 +15,11 @@ async function fetchData(){
 
 <template>
     <div class="card m-3">
-        <h5 class="card-header text-center">Vue 3 fetch data from API</h5>
-
-        <button @click="fetchData">click</button>
-
+        
+        
         <div class="card-body">
+            <h5 class="card-header text-center">Vue 3 fetch data from API</h5>
+            <button @click="fetchData">click</button>
             <div v-if="products">
                 <h5>Products</h5>
                 <ul class="mb-0">
@@ -32,3 +32,9 @@ async function fetchData(){
         </div>
     </div>
 </template>
+
+<style scoped>
+    .card{
+        margin: auto;
+    }
+</style>
