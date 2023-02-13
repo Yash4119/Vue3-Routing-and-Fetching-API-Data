@@ -1,9 +1,9 @@
 # vue-practice
 
 ## Project Deployed at
-'''
+```
 Link :- https://vue-practice-9feac.web.app/#/data
-'''
+```
 
 ## Project setup
 ```
