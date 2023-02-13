@@ -71,6 +71,7 @@ export default{
               });
           window.alert("Data posted successfully")
           console.log(this.articleId)
+          this.resc = '';  
         },
         getData(){
           axios.get("https://api.npms.io/v2/search?q=vue")
