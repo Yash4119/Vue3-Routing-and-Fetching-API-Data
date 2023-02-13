@@ -2,7 +2,7 @@
 
 ## Project Deployed at
 ```
-Link :- <a href="https://vue-practice-9feac.web.app/#/data">Deployement</a>
+Link :- https://vue-practice-9feac.web.app/#/data
 ```
 
 ## Project setup
